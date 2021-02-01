@@ -9,8 +9,14 @@ fs.readFile('movie.txt',(err,query)=>{
 
         let movies = JSON.parse(body);
 
+        
+
         movies.results.forEach((movie)=>{
             console.log(movie.original_title);
         })
+
+        if(movies.results <= 0){
+            console.log("movie not found....");
+        }
     })
 })
